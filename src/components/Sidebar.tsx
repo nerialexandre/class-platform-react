@@ -29,11 +29,6 @@ export function Sidebar() {
       <div className='flex flex-col gap-8'>
         <Lesson />
       </div>
-      {/* <ul>
-        {lessons?.map(lesson => {
-          return <li key={lesson.id}>{lesson.title}</li>
-        })}
-      </ul> */}
     </aside>
   )
 }
