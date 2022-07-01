@@ -33,12 +33,9 @@ export function Lesson() {
   }
 
   const formatDateAvailable = (lessonDate: Date) => {
-
     return format(new Date(lessonDate), "EEE' • 'd' de 'LLLL' • 'k'h'mm", {
       locale: ptBR
     })
-
-
   }
 
   return (
@@ -47,9 +44,7 @@ export function Lesson() {
         return (
           <a href="" key={lesson.id}>
             <span className="text-gray-300 text-base">
-              {
-              formatDateAvailable(lesson.availableAt)
-              }
+              {formatDateAvailable(lesson.availableAt)}
             </span>
             <div className="border-2 border-gray-500 p-4 rounded-[4px] mt-2">
               <header className="flex justify-between items-center mb-4">
