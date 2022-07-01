@@ -24,6 +24,18 @@ export function Player() {
               da aplicação e integrando a API GraphQL gerada pela plataforma no
               nosso front-end utilizando Apollo Client.
             </p>
+
+            <div className="flex items-center gap-4 mt-6">
+              <img
+                className="w-16 h-16 "
+                src="https://github.com/nerialexandre.png"
+                alt="picture"
+              />
+              <div>
+                <strong>Alexandre Neri</strong>
+                <span>Desenvolvedor Web</span>
+              </div>
+            </div>
           </div>
           <div className="flex flex-col gap-4 w-[25%]">
             <a
@@ -31,7 +43,7 @@ export function Player() {
               className="p-4 text-sm bg-green-500 flex items-center rounded font-bold uppercase gap-2 justify-center"
             >
               <DiscordLogo size={24} />
-              comunidade do discord
+              Comunidade do discord
             </a>
 
             <a
