@@ -1,15 +1,25 @@
-import { DiscordLogo, Lightning } from 'phosphor-react'
+import '@vime/core/themes/default.css'
+import { DefaultUi, Player as VimePlayer, Youtube } from '@vime/react'
+import {
+  CaretRight,
+  DiscordLogo,
+  FileArrowDown,
+  Image,
+  Lightning
+} from 'phosphor-react'
 
 export function Player() {
   return (
     <div className="flex-1">
       <div className="bg-black flex justify-center">
         {/* <div className="bg-red-600 h-full max-w-5xl max-h-[60vh] aspect-video"></div> */}
-        <iframe
-          className="w-full max-w-[1100px] aspect-video max-h-[70vh]"
-          src="https://www.youtube.com/embed/Djlcz_X5I5o"
-          title="YouTube video player"
-        ></iframe>
+
+        <div className="w-full max-w-[1100px] aspect-video max-h-[70vh]">
+          <VimePlayer>
+            <Youtube videoId="Djlcz_X5I5o" />
+            <DefaultUi />
+          </VimePlayer>
+        </div>
       </div>
       <div className="p-8 max-w-[1100px] mx-auto">
         <div className="flex items-start gap-16">
@@ -27,16 +37,17 @@ export function Player() {
 
             <div className="flex items-center gap-4 mt-6">
               <img
-                className="w-16 h-16 "
+                className="w-16 h-16 rounded-full border-blue-500 border-2 "
                 src="https://github.com/nerialexandre.png"
                 alt="picture"
               />
-              <div>
-                <strong>Alexandre Neri</strong>
-                <span>Desenvolvedor Web</span>
+              <div className="flex flex-col leading-relaxed">
+                <strong className="font-bold text-2xl">Alexandre Neri</strong>
+                <span className="text-sm text-gray-300">Desenvolvedor Web</span>
               </div>
             </div>
           </div>
+
           <div className="flex flex-col gap-4 w-[25%]">
             <a
               href="#"
@@ -54,6 +65,62 @@ export function Player() {
               Acesse o Desafio
             </a>
           </div>
+        </div>
+
+        <div className="gap-8 mt-20 grid grid-cols-2">
+          <a
+            href="#"
+            className="flex h-36 rounded-md overflow-hidden bg-gray-600 hover:bg-gray-500 transition-colors"
+          >
+            <div className="h-full p-6 flex items-center bg-green-500">
+              <FileArrowDown
+                size={38}
+                weight={'bold'}
+                className="mx-auto font-bold"
+              />
+            </div>
+            <div className="p-6">
+              <strong className="font-bold text-2xl block">
+                Material complementar
+              </strong>
+              <span className="text-sm text-gray-300">
+                Acesse o material complementar para acelerar o seu
+                desenvolvimento
+              </span>
+            </div>
+            <div className="p-6 flex items-center">
+              <CaretRight
+                size={28}
+                weight={'bold'}
+                className="mx-auto font-bold text-blue-500"
+              />
+            </div>
+          </a>
+
+          <a
+            href="#"
+            className="flex h-36 rounded-md overflow-hidden bg-gray-600 hover:bg-gray-500 transition-colors"
+          >
+            <div className="h-full p-6 flex items-center bg-green-500">
+              <Image size={38} weight={'bold'} className="mx-auto font-bold" />
+            </div>
+            <div className="p-6">
+              <strong className="font-bold text-2xl block">
+                Wallpapers exclusivos
+              </strong>
+              <span className="text-sm text-gray-300">
+                Baixe wallpapers exclusivos do Ignite Lab e personalize a sua
+                máquina
+              </span>
+            </div>
+            <div className="p-6 flex items-center  ">
+              <CaretRight
+                size={28}
+                weight={'bold'}
+                className="mx-auto font-bold text-blue-500"
+              />
+            </div>
+          </a>
         </div>
       </div>
     </div>
