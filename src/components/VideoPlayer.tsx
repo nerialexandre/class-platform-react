@@ -1,8 +1,7 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql, useQuery } from '@apollo/client'
+import { DefaultUi, Player, Youtube /* @vite-ignore */ } from '@vime/react'
 
-import (/* @vite-ignore */  '@vime/core/themes/default.css');
-/* @vite-ignore */
-import { DefaultUi, Player, Youtube /* @vite-ignore */ } from '@vime/react';
+import('@vime/core/themes/default.css')
 
 import {
   CaretRight,
@@ -10,7 +9,7 @@ import {
   FileArrowDown,
   Image,
   Lightning
-} from 'phosphor-react';
+} from 'phosphor-react'
 
 const GET_LESSONS_SLUG_QUERY = gql`
   query getLessonBySlug($slug: String) {
@@ -66,10 +65,12 @@ export function VideoPlayer(props: VideoProps) {
         <div className="bg-black flex justify-center">
           <div className="w-full max-w-[1100px] aspect-video max-h-[70vh]">
             <Player>
-            <Youtube videoId={data.lesson.videoId} key={data.lesson.videoId}/>
+              <Youtube
+                videoId={data.lesson.videoId}
+                key={data.lesson.videoId}
+              />
               <DefaultUi />
             </Player>
-
           </div>
         </div>
         <div className="p-8 max-w-[1100px] mx-auto">
