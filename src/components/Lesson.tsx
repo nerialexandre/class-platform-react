@@ -1,6 +1,7 @@
 import { gql, useQuery } from '@apollo/client'
 import { format, isPast } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import { Link } from 'react-router-dom'
 import checkCircleIcon from '../assets/images/check-circle.svg'
 import lockIcon from '../assets/images/lock.svg'
 
@@ -15,7 +16,6 @@ const GET_LESSONS_QUERY = gql`
     }
   }
 `
-
 interface Lesson {
   id: string
   title: string
@@ -42,7 +42,7 @@ export function Lesson() {
     <>
       {lessons?.map(lesson => {
         return (
-          <a href="" key={lesson.id}>
+          <Link to={`/event/lesson/${lesson.slug}`} key={lesson.id}>
             <span className="text-gray-300 text-base">
               {formatDateAvailable(lesson.availableAt)}
             </span>
@@ -74,7 +74,7 @@ export function Lesson() {
 
               <strong>{lesson.title}</strong>
             </div>
-          </a>
+          </Link>
         )
       })}
     </>
