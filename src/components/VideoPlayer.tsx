@@ -47,13 +47,14 @@ interface VideoProps {
 }
 
 export function VideoPlayer(props: VideoProps) {
-  const { data } = useQuery<LessonResponse>(GET_LESSONS_SLUG_QUERY, {
+  const { data, error } = useQuery<LessonResponse>(GET_LESSONS_SLUG_QUERY, {
     variables: {
       slug: props.lessonSlug
     }
   })
 
   if (!data) {
+    console.log(error)
     return (
       <div className="flex-1">
         <h1>carregando</h1>
