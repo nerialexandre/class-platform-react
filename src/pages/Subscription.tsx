@@ -11,6 +11,7 @@ const CREATE_SUBSCRIBER_MUTATION = gql`
     }
   }
 `
+
 export function Subscription() {
   const navigate = useNavigate()
   const [name, setName] = useState('')
@@ -80,7 +81,7 @@ export function Subscription() {
             <button
               type="submit"
               disabled={loading}
-              className="flex w-full bg-green-500 rounded h-8 p-6 items-center justify-center hover:bg-green-300 transition-colors disabled:bg-green-300 opacity-50"
+              className="flex w-full bg-green-500 rounded h-8 p-6 items-center justify-center hover:bg-green-300 transition-colors disabled:bg-green-800"
             >
               Garantir minha vaga
             </button>
